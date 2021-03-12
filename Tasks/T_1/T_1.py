@@ -50,6 +50,7 @@ for i in range(len(lmb)):
 
 
 # export the results in the csv file
+# TODO: the output file name needs to be changed to the correct 'sample.csv'
 np.savetxt('res.csv', res, delimiter=',')
 
 # this code is obsolete
