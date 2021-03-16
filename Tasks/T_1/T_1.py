@@ -32,7 +32,8 @@ def rsme(lm):
     # use k-fold CV to evaluate model
     predictions = model_selection.cross_val_predict(model, X, y, cv=10)
 
-    # print(scores)
+    # print(predictions)
+    # print(len(predictions))
     # TODO: are we calculating the RSME correctly?
     return np.sqrt(metrics.mean_squared_error(y, predictions))
 
