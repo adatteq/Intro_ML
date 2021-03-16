@@ -3,6 +3,7 @@
 # importing modules
 from sklearn import model_selection
 from sklearn import linear_model
+from sklearn import metrics
 import numpy as np
 
 
@@ -29,11 +30,11 @@ def rsme(lm):
 
     # TODO: understand the parameters and make sure they are right!
     # use k-fold CV to evaluate model
-    scores = model_selection.cross_val_score(model, X, y, cv=10)
+    predictions = model_selection.cross_val_predict(model, X, y, cv=10)
 
     # print(scores)
     # TODO: are we calculating the RSME correctly?
-    return np.sqrt(np.mean(np.absolute(scores)))
+    return np.sqrt(metrics.mean_squared_error(y, predictions))
 
 
 # calculate the hyper parameters
