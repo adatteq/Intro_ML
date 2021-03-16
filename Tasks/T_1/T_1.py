@@ -23,7 +23,7 @@ lmb = np.array([0.1, 1, 10, 100, 200])
 res = np.zeros(len(lmb))
 
 
-# calculating the RSME for every hyper parameter lm
+# calculating the RSME for every given hyper parameter in lmb
 def rsme(lm):
     # define the regression model
     model = linear_model.Ridge(alpha=lm)
