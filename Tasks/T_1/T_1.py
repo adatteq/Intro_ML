@@ -28,8 +28,8 @@ def rsme(lm):
     # define the regression model
     model = linear_model.Ridge(alpha=lm)
 
-    # TODO: understand the parameters and make sure they are right!
-    # use k-fold CV to evaluate model
+    # TODO: should we take cross_val_predict or cross_val_score?
+    # use 10-fold CV to evaluate model
     predictions = model_selection.cross_val_predict(model, X, y, cv=10)
 
     # print(predictions)
@@ -38,7 +38,7 @@ def rsme(lm):
     return np.sqrt(metrics.mean_squared_error(y, predictions))
 
 
-# calculate the hyper parameters
+# calculate the RSME
 for i in range(len(lmb)):
     res[i] = rsme(lmb[i])
 
