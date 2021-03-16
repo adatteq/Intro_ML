@@ -14,11 +14,6 @@ y = file[1:, 0]      # Ignoring the header line, the first column is the y array
 X = file[1:, 1:]     # Ignoring the header line, the rest is the X array
 
 
-# define the cross-validation model
-# TODO: understand the parameters and make sure they are right
-cv = model_selection.KFold(n_splits=10)
-
-
 # lambdas array
 lmb = np.array([0.1, 1, 10, 100, 200])
 
@@ -34,7 +29,7 @@ def rsme(lm):
 
     # TODO: understand the parameters and make sure they are right!
     # use k-fold CV to evaluate model
-    scores = model_selection.cross_val_score(model, X, y, cv=cv)
+    scores = model_selection.cross_val_score(model, X, y, cv=10)
 
     # print(scores)
     # TODO: are we calculating the RSME correctly?
