@@ -4,7 +4,6 @@
 from sklearn import model_selection
 from sklearn import linear_model
 import numpy as np
-import csv as csv
 
 
 # importing the data from the csv file
