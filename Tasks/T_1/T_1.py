@@ -35,6 +35,7 @@ def rsme(lm):
     # print(predictions)
     # print(len(predictions))
     # TODO: are we calculating the RSME correctly?
+    # Here we can just ad squared = False in the parameters to get rid of np.sqrt
     return np.sqrt(metrics.mean_squared_error(y, predictions))
 
 
